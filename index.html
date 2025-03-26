@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müzik Değerlendirme Platformu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>𝄞 Müzik Rehberi 𝄞</h1>
+        <p style="color: #fff; font-size: 1.2rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">Müzik dünyasını keşfedin
+            ve değerlendirmelerinizi paylaşın!</p>
+    </header>
+
+    <!-- Kimlik doğrulama konteyneri -->
+    <div id="auth-container">
+        <!-- Giriş yap bölümü -->
+        <div id="login-section" class="auth-section">
+            <h2>Giriş Yap</h2>
+            <input type="text" id="auth-username" placeholder="Kullanıcı Adı">
+            <input type="password" id="auth-password" placeholder="Şifre">
+            <button id="login-btn">Giriş Yap</button>
+            <p class="toggle-text">Henüz bir hesabın yok mu? <a id="show-register">Kayıt Ol</a></p>
+        </div>
+
+        <!-- Kayıt ol bölümü -->
+        <div id="register-section" class="auth-section hidden">
+            <h2>Kayıt Ol</h2>
+            <input type="text" id="register-name" placeholder="Ad Soyad">
+            <input type="email" id="register-email" placeholder="Email">
+            <input type="text" id="register-username" placeholder="Kullanıcı Adı">
+            <input type="password" id="register-password" placeholder="Şifre">
+            <button id="register-btn">Kayıt Ol</button>
+            <p class="toggle-text">Zaten bir hesabın var mı? <a id="show-login">Giriş Yap</a></p>
+        </div>
+    </div>
+
+    <!-- Uygulama konteyneri -->
+    <div id="app-container" style="display: none;">
+        <div class="tabs">
+            <button class="tab-button active" data-tab="home">Ana Sayfa</button>
+            <button class="tab-button" data-tab="add-review">Değerlendirme Ekle</button>
+            <button class="tab-button" data-tab="my-reviews">Değerlendirmelerim</button>
+            <button class="logout-button" data-tab="log-out" onclick="logout()">Çıkış Yap</button>
+        </div>
+
+        <!-- Ana sayfa sekmesi -->
+        <div id="home" class="tab-content active">
+            <h2
+                style="text-align: center; font-size: 1.8rem; font-weight: bold; color: #0A2993; margin-bottom: 1.5rem;">
+                Müzik Dünyasından Yorumlar</h2>
+            <div id="review-list-public" class="grid"></div>
+        </div>
+
+        <!-- Değerlendirme ekle sekmesi -->
+        <div id="add-review" class="tab-content">
+            <h2>Değerlendir ve Paylaş</h2>
+            <input type="text" id="youtube-link" placeholder="YouTube Müzik URL'si">
+            <select id="category">
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="HipHop">HipHop</option>
+                <option value="Klasik">Klasik</option>
+                <option value="Rap">Rap</option>
+                <option value="Caz">Caz</option>
+                <option value="Diğer">Diğer</option>
+            </select>
+            <textarea id="comment" placeholder="Değerlendirmenizi yazın..."></textarea>
+            <input type="number" id="rating" placeholder="Puanlama (1-5)" min="1" max="5">
+            <button id="save-review">Değerlendirmeyi Paylaş</button>
+        </div>
+
+        <!-- Değerlendirmelerim sekmesi -->
+        <div id="my-reviews" class="tab-content">
+            <h2
+                style="text-align: center; font-size: 1.8rem; font-weight: bold; color: #0A2993; margin-bottom: 1.5rem;">
+                Yorumlarım ve Puanlarım</h2>
+            <div id="review-list" class="grid"></div>
+        </div>
+    </div>
+
+    <!-- Modal penceresi -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal" id="review-modal">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-header" id="modal-title"></div>
+        <p><strong>Kullanıcı:</strong> <span id="modal-user"></span></p>
+        <p><strong>Kategori:</strong> <span id="modal-category"></span></p>
+        <p><strong>Değerlendirme:</strong></p>
+        <p id="modal-comment"></p>
+        <p><strong>Puan:</strong> <span id="modal-rating"></span></p>
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>

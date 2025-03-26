@@ -1,0 +1,334 @@
+        /* Genel Stil Ayarları */
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://4kwallpapers.com/images/wallpapers/ios-blue-background-texture-curves-digital-art-stock-4480x2520-6784.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        } /* Body stil ayarları*/
+
+        header {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgb(0, 0, 0);
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.651);
+            backdrop-filter: blur(50px);
+        } /* Header stil ayarları */
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        } /* Header başlık stil ayarları */
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        } /* Sekme stil ayarları */
+
+        @media (max-width: 600px) {
+            .tabs {
+            flex-direction: column;
+            align-items: center;
+            }
+        } /* Mobil cihazlar için sekme stil ayarları */ 
+
+        .tab-button {
+            background-color: #ffffff;
+            color: #0A2993;
+            padding: 0.75rem 5rem;
+            border: 2px solid #ddd;
+            border-radius: 24px;
+            font-weight: 500;
+            font-size: 1rem;
+            font-weight: 550;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        } /* Sekme buton stil ayarları */
+
+        .tab-button.active {
+            background-color: #0A2993;
+            color: #fff;
+        } /* Aktif sekme buton stil ayarları */
+
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 2rem;
+            max-width: 1200px;
+        } /* Sekme içerik stil ayarları */
+
+        .tab-content.active {
+            display: block;
+        } /* Aktif sekme içerik stil ayarları */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        } /* Grid stil ayarları */
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+        } /* Kart stil ayarları */
+
+        .card:hover {
+            transform: translateY(-5px);
+        } /* Kart hover stil ayarları */
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        } /* Kart resim stil ayarları */
+
+        .card-content {
+            padding: 1rem;
+            text-align: center;
+        } /* Kart içerik stil ayarları */
+
+        .card-content h4 {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        } /* Kart başlık stil ayarları */
+
+        .card-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        } /* Kart paragraf stil ayarları */
+
+        #auth-container {
+            display: block;
+            max-width: 400px;
+            margin: auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        } /* Kimlik doğrulama konteyner stil ayarları */
+
+        #auth-container h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        } /* Kimlik doğrulama başlık stil ayarları */
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 500px;
+            width: 90%;
+        } /* Modal stil ayarları */
+
+        .modal-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        } /* Modal başlık stil ayarları */
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+        } /* Modal kapatma butonu stil ayarları */
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        } /* Modal arka plan stil ayarları */
+
+        .modal.active,
+        .modal-overlay.active {
+            display: block;
+        } /* Aktif modal ve arka plan stil ayarları */
+
+        #add-review {
+            background: linear-gradient(135deg, #ffffff, #f3f4f7);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        } /* İnceleme ekleme formu stil ayarları */
+
+        #add-review h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0A2993;
+            margin-bottom: 1.5rem;
+        } /* İnceleme ekleme başlık stil ayarları */
+
+        #add-review input,
+        #add-review select,
+        #add-review textarea,
+        #add-review button {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            transition: border 0.3s, box-shadow 0.3s;
+        } /* İnceleme ekleme form elemanları stil ayarları */
+
+        #add-review input:focus,
+        #add-review select:focus,
+        #add-review textarea:focus {
+            border-color: #0A2993;
+            box-shadow: 0 0 8px rgba(74, 0, 224, 0.2);
+            outline: none;
+        } /* İnceleme ekleme form elemanları odak stil ayarları */
+
+        #add-review textarea {
+            height: 120px;
+            resize: none;
+        } /* İnceleme ekleme metin alanı stil ayarları */
+
+        #add-review button {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        } /* İnceleme ekleme buton stil ayarları */
+
+        #add-review button:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        } /* İnceleme ekleme buton hover stil ayarları */
+
+        #auth-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        } /* Kimlik doğrulama konteyner stil ayarları (tekrar) */
+
+        #auth-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #0A2993;
+            font-weight: bold;
+        } /* Kimlik doğrulama başlık stil ayarları (tekrar) */
+
+        #auth-container input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        } /* Kimlik doğrulama giriş stil ayarları */
+
+        #auth-container input:focus {
+            border-color: #0A2993;
+            box-shadow: 0 0 8px rgba(74, 0, 224, 0.2);
+            outline: none;
+        } /* Kimlik doğrulama giriş odak stil ayarları*/
+
+        #auth-container button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        } /* Kimlik doğrulama buton stil ayarları */
+
+        #auth-container button:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        } /* Kimlik doğrulama buton hover stil ayarları */
+
+        .toggle-text {
+            font-size: 0.9rem;
+            color: #333;
+        } /* Geçiş metni stil ayarları */
+
+        .toggle-text a {
+            color: #0A2993;
+            text-decoration: underline;
+            cursor: pointer;
+        } /* Geçiş metni bağlantı stil ayarları */
+
+        .hidden {
+            display: none;
+        } /* Gizli stil ayarları */
+
+        .logout-button {
+            background-color: #ffffff;
+            color: #0A2993;
+            padding: 0.75rem 5rem;
+            border: 2px solid #ddd;
+            border-radius: 24px;
+            font-weight: 550;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        } /* Çıkış butonu stil ayarları */
+
+        .logout-button:hover {
+            background-color: #0A2993;
+            color: #ffffff;
+        } /* Çıkış butonu hover stil ayarları */
+
+        .logout-button:active {
+            background-color: #0A2993;
+            color: #ffffff;
+        } /* Çıkış butonu aktif stil ayarları */
